@@ -37,8 +37,43 @@ export const changeState = (prop) => {
 // Function: HaikuChecker()
 // input: obj
 // output: true/false
+
+const counterFunction = () => {
+  let counter = 0;
+  return () => {
+    counter++;
+    return counter;
+  };
+};
+const incrementer = counterFunction();
+
 export const haikuChecker = (poem) => {
-  if (counter == 1 || counter) return false;
+  const counter = incrementer();
+
+  if (counter == 4) {
+    // more than three lines...?
+    if (poem[counter]) {
+      return false;
+    } else {
+      return true;
+    }
+  } else if (counter == 1 || counter == 3) {
+    const lineArr = splitLine(poem[counter]);
+    if (lineChecker(lineArr) != 5) {
+      return false;
+    } else {
+      return haikuChecker(poem);
+    }
+  } else if (counter == 2) {
+    const lineArr = splitLine(poem[counter]);
+    if (lineChecker(lineArr) != 7) {
+      return false;
+    } else {
+      return haikuChecker(poem);
+    }
+  } else {
+    return false;
+  }
 };
 
 // Function: break line input into words
