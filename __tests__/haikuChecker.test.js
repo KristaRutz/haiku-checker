@@ -28,6 +28,11 @@ describe("lineChecker()", () => {
     const emptyArray = [];
     expect(lineChecker(emptyArray)).toEqual(0);
   });
+
+  test("returns 1 syllable for lines with 1 1-syllable word", () => {
+    const oneWordArray = ["hi"];
+    expect(lineChecker(oneWordArray)).toEqual(1);
+  });
 });
 
 // describe("Haiku", () => {

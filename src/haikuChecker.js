@@ -52,6 +52,7 @@ export const splitLine = (line) => {
 // > input: line as array of words?
 // > output: int (syllables)
 export const lineChecker = (lineArr) => {
+  const count = lineArr.map(word );
   return 0;
 };
 
