@@ -6,6 +6,16 @@ OBJECTIVES:
 4. Punctuation and capitalization are up to the poet, and need not follow the rigid rules used in structuring sentences.
 5. A haiku does not have to rhyme, in fact usually it does not rhyme at all.
 6. It can include the repetition of words or sounds
+
+
+storeState
+stateChanger
+getNumberOfSyllables
+counterFunction
+incrementer
+haikuChecker
+lineChecker
+symbolRejector
 */
 
 export const storeState = (initialState) => {
@@ -102,7 +112,10 @@ export const getNumberOfSyllables = (word) => {
   const edgeCaseNum =
     word.match(/(eo|io|ia)/gi) != null ? word.match(/(eo|io|ia)/gi).length : 0;
 
-  if (word[word.length - 1].toLowerCase() == "e") {
+  if (
+    word[word.length - 1].toLowerCase() == "e" &&
+    word[word.length - 2].toLowerCase() != "l"
+  ) {
     return edgeCaseNum + word.match(/[aeiouy]+/gi).length - 1;
   } else {
     return edgeCaseNum + word.match(/[aeiouy]+/gi).length;
@@ -121,11 +134,13 @@ export const getNumberOfSyllables = (word) => {
 // PLURALS & the SILENT E: silent "e" + s for plural, e.g. "lines" --> not sure we can make a rule for this.  Consider "apostrophes" and "classes"
 //// "....ses" the e is pronounced.
 
-// export const rejectionChecker = (word) => {
-//   const symbols = ["$", "%", "&", "=", "@", "#", "-"];
-//   let wordArray = word.split("");
-//   let symbolChecker = symbols.filter(x => wordArray.includes(x));
-//   if symbolChecker.length < 0 {
-// return word
-// }
-// };
+export const symbolRejector = (word) => {
+  const symbols = ["$", "%", "&", "=", "@", "#", "-"];
+  const wordArray = word.split("");
+  const symbolChecker = symbols.filter((x) => wordArray.includes(x));
+  if ((symbolChecker.length = 0)) {
+    return true;
+  } else {
+    return false;
+  }
+};

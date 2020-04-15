@@ -4,6 +4,7 @@ import {
   changeState,
   lineChecker,
   haikuChecker,
+  symbolRejector,
 } from "../src/haikuChecker.js";
 
 describe("getNumberOfSyllables()", () => {
@@ -17,6 +18,7 @@ describe("getNumberOfSyllables()", () => {
 
   test("should return 1 syllable for 2 vowels with silent 'e'", () => {
     expect(getNumberOfSyllables("code")).toEqual(1);
+    expect(getNumberOfSyllables("coddle")).toEqual(2);
   });
 
   test("should return 1 syllable for 2 vowels with doubled vowels", () => {
@@ -75,29 +77,18 @@ describe("haikuChecker()", () => {
   });
 });
 
-// describe("Haiku", () => {
-//   // test('should have a value in each line', () => {
-//   //  let haikuLines = new HaikuLines(1, 2, 3);
-//   //   expect(haikuLines.line1).toEqual(1);
-//   //   expect(haikuLines.line2).toEqual(2);
-//   //   expect(haikuLines.line3).toEqual(3);
-//   // });
-//   test("should output number of syllables", () => {
-//     // Arrange
-//     const wordValue = "Epicodus";
-//     const word = storeState(wordValue);
+describe("symbolRejector()", () => {
+  test("should return false if word has specified symbols", () => {
+    // Arrange
+    const word = "$money";
 
-//     // Act
-//     const number = getNumberOfSyllables(word);
+    // Act
+    const wordResult = symbolRejector(word);
 
-//     // Assert
-//     expect(number).toEqual(4);
-//   });
-// });
-// // Assert
-// //     expect(haikuLines.line1).toEqual(1);
-// //   });
-// // });
+    // Assert
+    expect(wordResult).toEqual(false);
+  });
+});
 
 // describe("getNumberOfSyllables()", () => {
 //   test("returns 1 vowel", () => {
