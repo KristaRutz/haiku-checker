@@ -1,8 +1,4 @@
 import {
-
- 
- 
- ,
   getNumberOfSyllables,
   storeState,
   changeState,
@@ -22,7 +18,7 @@ describe("getNumberOfSyllables()", () => {
   });
 
   test("returns 1 syllable for 2 vowels with doubled vowels", () => {
-    expect(getNumberOfSyllables("green")).toEqual(1);
+    expect(getNumberOfSyllables("greenify")).toEqual(3);
   });
 });
 

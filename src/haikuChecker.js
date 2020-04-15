@@ -23,7 +23,7 @@ export const changeState = (prop) => {
   return (value) => {
     return (state) => ({
       ...state,
-      [prop]: (state[prop] || 0) + value,,
+      [prop]: (state[prop] || 0) + value,
     });
   };
 };
@@ -52,9 +52,9 @@ export const changeState = (prop) => {
 // > output: int (syllables)
 export const getNumberOfSyllables = (word) => {
   // const vowels = ["a", "e", "i", "o", "u", "y"];
-  // const lowerSplitWord = word.toLowerCase().split();
   // const vowelMatch = word.match(/[aeiou]/gi).length;
-  return word.match(/[aeiouy]/gi).length;
+  // const newWord = word.toLowerCase().split().;
+  return word.match(/[aeiouy]+/gi).length;
 };
 
 // Function: HaikuChecker()
