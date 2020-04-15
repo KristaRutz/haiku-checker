@@ -138,9 +138,14 @@ export const symbolRejector = (word) => {
   const symbols = ["$", "%", "&", "=", "@", "#", "-"];
   const wordArray = word.split("");
   const symbolChecker = symbols.filter((x) => wordArray.includes(x));
-  if ((symbolChecker.length = 0)) {
+  if (symbolChecker.length == 0) {
     return true;
   } else {
     return false;
   }
 };
+
+// export const numberRejector = (word) => {
+//   const numbers = /\d+/;
+//   const numberArray =
+// };
