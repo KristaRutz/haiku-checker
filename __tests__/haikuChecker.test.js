@@ -22,6 +22,11 @@ describe("getNumberOfSyllables()", () => {
   test("should return 1 syllable for 2 vowels with doubled vowels", () => {
     expect(getNumberOfSyllables("greenify")).toEqual(3);
   });
+
+  test("should return 2 syllable for special dipthongs like ia", () => {
+    expect(getNumberOfSyllables("indiana")).toEqual(4);
+    expect(getNumberOfSyllables("leo")).toEqual(2);
+  });
 });
 
 describe("lineChecker()", () => {

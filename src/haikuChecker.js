@@ -98,15 +98,34 @@ export const lineChecker = (lineArr) => {
 // > input: word string
 // > output: int (syllables)
 export const getNumberOfSyllables = (word) => {
+  // const specials = ["eo", "io", "ia"];
+  const edgeCaseNum =
+    word.match(/(eo|io|ia)/gi) != null ? word.match(/(eo|io|ia)/gi).length : 0;
+
   if (word[word.length - 1].toLowerCase() == "e") {
-    return word.match(/[aeiouy]+/gi).length - 1;
+    return edgeCaseNum + word.match(/[aeiouy]+/gi).length - 1;
   } else {
-    return word.match(/[aeiouy]+/gi).length;
+    return edgeCaseNum + word.match(/[aeiouy]+/gi).length;
   }
 };
 
-// Edge cases
-// Punctuation checker
-// Int checker
-// "eo" dipt
-h
+// Edge cases: ----------------------------------------------------
+// SYMBOLS: Punctuation checker e.g. "&" or "%" or
+//// "The boy & the dog" --> returns 4 but should return 5
+//// ke$ha
+//// symbols that are vocalized in a sentence: ["$", "%", "&", "=", "@", "#", "-"]
+// INTS: Int checker
+//// "1" --> returns 0 but should return 1
+//// "11" --> returns 0 but should return 3
+// DIPTHONGS: "eo", "io", "ia" dipthongs are 2 syllables
+// PLURALS & the SILENT E: silent "e" + s for plural, e.g. "lines" --> not sure we can make a rule for this.  Consider "apostrophes" and "classes"
+//// "....ses" the e is pronounced.
+
+// export const rejectionChecker = (word) => {
+//   const symbols = ["$", "%", "&", "=", "@", "#", "-"];
+//   let wordArray = word.split("");
+//   let symbolChecker = symbols.filter(x => wordArray.includes(x));
+//   if symbolChecker.length < 0 {
+// return word
+// }
+// };

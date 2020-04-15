@@ -1,0 +1,18 @@
+{
+  "coauthors": {
+    "k": {
+      "name": "Krista",
+      "email": "krista@gmail.com"
+    },
+    "d": {
+      "name": "Dusty",
+      "email": "dusty@gmail.com",
+    "vw": {
+      "name": "Vera Weikel",
+      "email": "vera.weikel@gmail.com",
+    "kw": {
+      "name": "Katy Wicz",
+      "email": "vera.weikel@gmail.com"
+    }
+  }
+}
