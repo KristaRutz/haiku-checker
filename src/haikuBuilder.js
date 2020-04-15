@@ -68,19 +68,27 @@ const generateRandomLine = (syllables) => {
   const thisWordCount = getNumberOfSyllables(firstWord);
 
   if (thisWordCount > syllables) {
+    // console.log(firstWord, " was too long, try again");
     return generateRandomLine(syllables);
   } else if (thisWordCount < syllables) {
-    return (
-      generateRandomLine(syllables - getNumberOfSyllables(firstWord)) +
-      " " +
-      firstWord
-    );
+    const syllablesRemaining = syllables - thisWordCount;
+    return generateRandomLine(syllablesRemaining) + " " + firstWord;
   } else {
-    return firstWord;
+    console.log("returning ", firstWord);
+    return "1." + firstWord;
   }
 };
 
-console.log("Generator", generateRandomLine(5));
+const result = generateRandomLine(13);
+
+// console.log("----Our haiku----");
+console.log("------------Final OutPut----------");
+console.log(result);
+
+// console.log("Line 2");
+// console.log(generateRandomLine(7));
+// console.log("Line 3");
+// console.log(generateRandomLine(5));
 
 // const recurseReverse = (string) => {
 //   if (string === "") {
