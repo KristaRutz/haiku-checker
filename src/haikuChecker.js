@@ -51,10 +51,11 @@ export const changeState = (prop) => {
 // > input: word string
 // > output: int (syllables)
 export const getNumberOfSyllables = (word) => {
-  // const vowels = ["a", "e", "i", "o", "u", "y"];
-  // const vowelMatch = word.match(/[aeiou]/gi).length;
-  // const newWord = word.toLowerCase().split().;
-  return word.match(/[aeiouy]+/gi).length;
+  if (word[word.length - 1] == "e" || word[word.length - 1] == "E") {
+    return word.match(/[aeiouy]+/gi).length - 1;
+  } else {
+    return word.match(/[aeiouy]+/gi).length;
+  }
 };
 
 // Function: HaikuChecker()
