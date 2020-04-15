@@ -37,6 +37,9 @@ export const changeState = (prop) => {
 // Function: HaikuChecker()
 // input: obj
 // output: true/false
+export const haikuChecker = (poem) => {
+  if (counter == 1 || counter) return false;
+};
 
 // Function: break line input into words
 // > input: stringLine
@@ -53,8 +56,11 @@ export const splitLine = (line) => {
 // > output: int (syllables)
 export const lineChecker = (lineArr) => {
   const countArr = lineArr.map((word) => getNumberOfSyllables(word));
+  const sum = countArr.reduce((sum, number) => {
+    return sum + number;
+  }, 0);
 
-  return countArr[0] || 0;
+  return sum || 0;
 };
 
 // Function: check syllables in a single word

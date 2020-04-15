@@ -3,6 +3,7 @@ import {
   storeState,
   changeState,
   lineChecker,
+  haikuChecker,
 } from "../src/haikuChecker.js";
 
 describe("getNumberOfSyllables()", () => {
@@ -33,6 +34,22 @@ describe("lineChecker()", () => {
     const oneWordArray = ["hi"];
     expect(lineChecker(oneWordArray)).toEqual(1);
   });
+
+  test("returns correct syllables for lines with multiple words", () => {
+    const manyWordArray = ["line", "with", "many", "words"];
+    expect(lineChecker(manyWordArray)).toEqual(5);
+  });
+});
+
+describe("haikuChecker()", () => {
+  test("returns true if a poem is a haiku", () => {
+    const haiku1 = {
+      1: "Bla bla bla bla bla",
+      2: "bla bla bla bla bla bla bla",
+      3: "bla bla bla bla bla",
+    };
+    expect(haikuChecker(haiku1)).toEqual(true);
+  });
 });
 
 // describe("Haiku", () => {
@@ -58,6 +75,12 @@ describe("lineChecker()", () => {
 // //     expect(haikuLines.line1).toEqual(1);
 // //   });
 // // });
+
+// describe("getNumberOfSyllables()", () => {
+//   test("returns 1 vowel", () => {
+//     expect(getNumberOfSyllables("i")).toEqual(1);
+//   });
+// });
 
 // describe("getNumberOfSyllables()", () => {
 //   test("returns 1 vowel", () => {
