@@ -7,7 +7,6 @@ OBJECTIVES:
 5. A haiku does not have to rhyme, in fact usually it does not rhyme at all.
 6. It can include the repetition of words or sounds
 
-
 storeState
 stateChanger
 getNumberOfSyllables
@@ -18,7 +17,7 @@ lineChecker
 symbolRejector
 */
 
-export const storeState = (initialState) => {
+const storeState = (initialState) => {
   let currentState = initialState;
   return (stateChangeFunction) => {
     const newState = stateChangeFunction(currentState);
@@ -27,9 +26,9 @@ export const storeState = (initialState) => {
   };
 };
 
-export const stateChanger = storeState({});
+const stateChanger = storeState({});
 
-export const changeState = (prop) => {
+const changeState = (prop) => {
   return (value) => {
     return (state) => ({
       ...state,

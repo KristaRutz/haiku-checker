@@ -6,7 +6,7 @@ import {
   haikuChecker,
   symbolRejector,
 } from "../src/haikuChecker.js";
-import fs from "fs";
+import * as fs from "fs";
 
 describe("getNumberOfSyllables()", () => {
   test("should return 1 syllable for 1 vowel", () => {
