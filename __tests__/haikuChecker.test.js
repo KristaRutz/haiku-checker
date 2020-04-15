@@ -44,6 +44,7 @@ describe("lineChecker()", () => {
 describe("haikuChecker()", () => {
   test("should return true if a poem is a haiku", () => {
     const haiku1 = {
+      title: "Sample Haiku",
       1: "Bla bla bla bla bla",
       2: "bla bla bla bla bla bla bla",
       3: "bla bla bla bla bla",

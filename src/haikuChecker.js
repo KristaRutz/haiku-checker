@@ -104,3 +104,9 @@ export const getNumberOfSyllables = (word) => {
     return word.match(/[aeiouy]+/gi).length;
   }
 };
+
+// Edge cases
+// Punctuation checker
+// Int checker
+// "eo" dipt
+h
