@@ -34,9 +34,16 @@ export const changeState = (prop) => {
 //   3: "bla bla bla bla bla",
 // };
 
+// Function: HaikuChecker()
+// input: obj
+// output: true/false
+
 // Function: break line input into words
 // > input: stringLine
 // > output: wordsArray
+export const splitLine = (line) => {
+  return line.split(" ");
+};
 
 // Function: lineChecker()
 // loop through words and count syllables in line (of words)
@@ -44,6 +51,9 @@ export const changeState = (prop) => {
 // sum syllables of words in line
 // > input: line as array of words?
 // > output: int (syllables)
+export const lineChecker = (lineArr) => {
+  return 0;
+};
 
 // Function: check syllables in a single word
 // > this will be the "meat" of our logic?
@@ -51,13 +61,9 @@ export const changeState = (prop) => {
 // > input: word string
 // > output: int (syllables)
 export const getNumberOfSyllables = (word) => {
-  if (word[word.length - 1] == "e" || word[word.length - 1] == "E") {
+  if (word[word.length - 1].toLowerCase() == "e") {
     return word.match(/[aeiouy]+/gi).length - 1;
   } else {
     return word.match(/[aeiouy]+/gi).length;
   }
 };
-
-// Function: HaikuChecker()
-// input: obj
-// output: true/false

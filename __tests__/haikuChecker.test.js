@@ -2,6 +2,7 @@ import {
   getNumberOfSyllables,
   storeState,
   changeState,
+  lineChecker,
 } from "../src/haikuChecker.js";
 
 describe("getNumberOfSyllables()", () => {
@@ -19,6 +20,13 @@ describe("getNumberOfSyllables()", () => {
 
   test("returns 1 syllable for 2 vowels with doubled vowels", () => {
     expect(getNumberOfSyllables("greenify")).toEqual(3);
+  });
+});
+
+describe("lineChecker()", () => {
+  test("returns 0 syllables for lines with no words", () => {
+    const emptyArray = [];
+    expect(lineChecker(emptyArray)).toEqual(0);
   });
 });
 
