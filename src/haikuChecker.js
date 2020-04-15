@@ -28,12 +28,6 @@ export const changeState = (prop) => {
   };
 };
 
-// const haiku = {
-//   1: "Bla bla bla bla bla",
-//   2: "bla bla bla bla bla bla bla",
-//   3: "bla bla bla bla bla",
-// };
-
 // Function: HaikuChecker()
 // input: obj
 // output: true/false
@@ -49,7 +43,7 @@ const incrementer = counterFunction();
 
 export const haikuChecker = (poem) => {
   const counter = incrementer();
-
+  // base case
   if (counter == 4) {
     // more than three lines...?
     if (poem[counter]) {
