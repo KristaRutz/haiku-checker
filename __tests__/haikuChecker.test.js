@@ -8,6 +8,10 @@ describe("getNumberOfSyllables()", () => {
   test("returns 1 vowel", () => {
     expect(getNumberOfSyllables("i")).toEqual(1);
   });
+
+  test("returns 2 vowels", () => {
+    expect(getNumberOfSyllables("BACKPACK")).toEqual(2);
+  });
 });
 
 // describe("Haiku", () => {

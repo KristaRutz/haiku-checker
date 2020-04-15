@@ -28,11 +28,11 @@ export const changeState = (prop) => {
   };
 };
 
-const haiku = {
-  1: "Bla bla bla bla bla",
-  2: "bla bla bla bla bla bla bla",
-  3: "bla bla bla bla bla",
-};
+// const haiku = {
+//   1: "Bla bla bla bla bla",
+//   2: "bla bla bla bla bla bla bla",
+//   3: "bla bla bla bla bla",
+// };
 
 // Function: break line input into words
 // > input: stringLine
@@ -52,10 +52,9 @@ const haiku = {
 // > output: int (syllables)
 export const getNumberOfSyllables = (word) => {
   // const vowels = ["a", "e", "i", "o", "u", "y"];
-  // const lowerWord = word.toLowerCase();
-  // let splitWord = lowerWord.split("");
-
-  return 0;
+  // const lowerSplitWord = word.toLowerCase().split();
+  // const vowelMatch = word.match(/[aeiou]/gi).length;
+  return word.match(/[aeiouy]/gi).length;
 };
 
 // Function: HaikuChecker()
