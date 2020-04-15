@@ -52,8 +52,9 @@ export const splitLine = (line) => {
 // > input: line as array of words?
 // > output: int (syllables)
 export const lineChecker = (lineArr) => {
-  const count = lineArr.map(word );
-  return 0;
+  const countArr = lineArr.map((word) => getNumberOfSyllables(word));
+
+  return countArr[0] || 0;
 };
 
 // Function: check syllables in a single word
