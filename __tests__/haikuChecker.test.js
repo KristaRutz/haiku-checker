@@ -1,16 +1,28 @@
 import {
+
+ 
+ 
+ ,
   getNumberOfSyllables,
   storeState,
   changeState,
 } from "../src/haikuChecker.js";
 
 describe("getNumberOfSyllables()", () => {
-  test("returns 1 vowel", () => {
+  test("returns 1 syllable for 1 vowel", () => {
     expect(getNumberOfSyllables("i")).toEqual(1);
   });
 
-  test("returns 2 vowels", () => {
+  test("returns 2 syllables for 2 vowels", () => {
     expect(getNumberOfSyllables("BACKPACK")).toEqual(2);
+  });
+
+  test("returns 1 syllable for 2 vowels with silent 'e'", () => {
+    expect(getNumberOfSyllables("code")).toEqual(1);
+  });
+
+  test("returns 1 syllable for 2 vowels with doubled vowels", () => {
+    expect(getNumberOfSyllables("green")).toEqual(1);
   });
 });
 
