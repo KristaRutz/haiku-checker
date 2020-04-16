@@ -34,6 +34,9 @@ const largestPrimeFactor = (input) => {
   // return primeFactorsOfInput;
 };
 
-console.log(largestPrimeFactor(13195));
-console.log(largestPrimeFactor(131950));
-// console.log(largestPrimeFactor(600851475143));
+// console.log(largestPrimeFactor(13195));
+// console.log(largestPrimeFactor(131950));
+console.log(largestPrimeFactor(600851475143));
+
+//
+//answer 6857
