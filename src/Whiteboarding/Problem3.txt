@@ -1,0 +1,17 @@
+/*
+Largest prime factor
+
+The prime factors of 13,195 are 5, 7, 13 and 29.
+
+Set of prime factors for 13195 == [5, 7, 13, 29]
+
+What is the largest prime factor of the number 600,851,475,143 ?
+*/
+
+
+Function: -take a number as an input
+- find a list of all prime factors - or, all factors? 
+- return the highest prime factor
+
+
+const largestPrimeFactor 
